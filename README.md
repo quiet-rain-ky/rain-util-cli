@@ -6,13 +6,22 @@
 
 ### 使用说明
 
-```shell
-1. 安装 rain-util-cli
-npm install rain-util-cli -g
+#### 1. 安装 rain-util-cli
 
-2. 使用
+```shell
+npm install rain-util-cli -g
+```
+
+#### 2. 使用
+
 <1> 初始化 rbj 配置文件
+
+```shell
 rain-tool
+```
+
 <2> 补全 rbj 配置文件
+
+```shell
 rain-tool -c
 ```
