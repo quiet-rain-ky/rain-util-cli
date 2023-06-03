@@ -10,7 +10,7 @@ Auxiliary tool
 
 ```shell
 npm install rain-util-cli -g
-` ` `
+```
 
 #### 2. Use
 
@@ -18,10 +18,10 @@ npm install rain-util-cli -g
 
 ```shell
 rain-tool
-` ` `
+```
 
 <2> Complete the rbj configuration file
 
 ```shell
 rain-tool -c
-` ` `
+```
