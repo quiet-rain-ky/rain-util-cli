@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 
-const { program } = require("commander");
-const versionInfo = require("../package.json");
-const rbjCreate = require("../utils/rbj_create");
+import { program } from "commander";
+import versionInfo from "../package.json" assert { type: "json" };
+import rbjCreate from "../utils/rbj_create.js";
 
 // 输出版本信息
 program.version(versionInfo.version, "-v, --version", "rain-tools version information");

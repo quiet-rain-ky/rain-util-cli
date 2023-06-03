@@ -1,5 +1,5 @@
-const fs = require("fs");
-const path = require("path");
+import fs from "fs";
+import path from "path";
 // fs 默认使用的是 同步对象, 即同步对象中所有对文件的操作都是同步的, 所有我们在此处从 fs 模块中获取文件操作的异步对象
 const fsPromises = fs.promises;
 
@@ -74,7 +74,13 @@ async function copyFileAsync(src, dest) {
 
 // 源目录和指定目录进行对比, 如果指定目录缺少源目录中的某个目录或文件, 则从源目录中复制到指定的目录中
 async function copyMissingFiles(src, dest) {
-    try {
+    const exists = await fsPromises
+        .access(dest)
+        .then(() => true)
+        .catch(() => false);
+    if (!exists) {
+        throw `${dest } Path does not exist`;
+    } else {
         // 使用 fsPromises.readdir 方法读取源目录中的所有文件和子目录
         const files = await fsPromises.readdir(src);
         // 遍历源目录中的每个文件和子目录
@@ -111,13 +117,7 @@ async function copyMissingFiles(src, dest) {
                 }
             }
         }
-    } catch (err) {
-        console.error(err);
     }
 }
 
-exports.copyDirSync = copyDirSync;
-exports.copyFileSync = copyFileSync;
-exports.copyDirAsync = copyDirAsync;
-exports.copyFileAsync = copyFileAsync;
-exports.copyMissingFiles = copyMissingFiles;
+export { copyDirSync, copyFileSync, copyDirAsync, copyFileAsync, copyMissingFiles };
