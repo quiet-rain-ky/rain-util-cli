@@ -79,7 +79,7 @@ async function copyMissingFiles(src, dest) {
         .then(() => true)
         .catch(() => false);
     if (!exists) {
-        throw `${dest } Path does not exist`;
+        throw `${path.normalize(dest).replace(/\\/g, "/")} Path does not exist`;
     } else {
         // 使用 fsPromises.readdir 方法读取源目录中的所有文件和子目录
         const files = await fsPromises.readdir(src);
