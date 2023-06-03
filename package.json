@@ -1,0 +1,28 @@
+{
+  "name": "rain-util-cli",
+  "version": "1.0.0",
+  "description": "辅助工具",
+  "bin": {
+    "rbj-tool": "bin/rbj-tools.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://gitee.com/rain-ky/rain-util-cli.git"
+  },
+  "bugs": {
+    "url": "https://gitee.com/rain-ky/rain-util-cli/issues"
+  },
+  "keywords": [
+    "rain-util-cli"
+  ],
+  "author": {
+    "name": "Quiet Rain"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "commander": "^10.0.1"
+  }
+}
