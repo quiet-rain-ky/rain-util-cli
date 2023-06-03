@@ -1,6 +1,6 @@
 {
   "name": "rain-util-cli",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "辅助工具",
   "bin": {
     "rbj-tool": "bin/rbj-tools.js"
@@ -10,8 +10,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://gitee.com/rain-ky/rain-util-cli.git"
+    "url": "https://github.com/quiet-rain-ky/rain-util-cli"
   },
+  "homepage": "https://github.com/quiet-rain-ky/rain-util-cli",
   "bugs": {
     "url": "https://gitee.com/rain-ky/rain-util-cli/issues"
   },
