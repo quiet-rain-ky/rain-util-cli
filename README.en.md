@@ -17,7 +17,7 @@ npm install rain-util-cli -g
 <1> Initialize the rbj configuration file
 
 ```shell
-rbj-tool
+rbj-tool -i
 ```
 
 <2> Complete the rbj configuration file
