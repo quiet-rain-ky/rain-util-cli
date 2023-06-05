@@ -9,7 +9,7 @@ function rbjCreateFun() {
     // process.cwd() 可以直接获取当前命令运行的目录
     let targetDir = process.cwd() + "/rbjConfigs";
     if (fs.existsSync(targetDir)) {
-        console.log(chalk.green("The rbjConfigs directory already exists. You can use 'rain-tools rbj-init -c' to complete the configuration file"));
+        console.log(chalk.red("The rbjConfigs directory already exists. You can use 'rbj-tool -c' to complete the configuration file"));
     } else {
         // 获取当前文件的目录路径, 和 __dirname 一样的作用, 只不过 __dirname 在 ES Module 模式下不能使用
         let currentFileDirectory = path.dirname(fileURLToPath(import.meta.url));
@@ -41,13 +41,21 @@ function complementFun() {
 }
 
 // rbj-init 命令的回调函数
-function rbjCreate(opts) {
-    if (opts.complement) {
+function rbjCreate(opts, programCommand) {
+    if (opts.init && opts.complement) {
+        console.log(chalk.red("(-i, --init 参数) 和 (-c, --complement 参数) 不能同时使用"));
+    } else if (opts.init) {
+        // 初始化创建操作
+        rbjCreateFun();
+    } else if (opts.complement) {
         // 判断是否进行补全操作
         complementFun();
     } else {
-        // 初始化创建操作
-        rbjCreateFun();
+        if (programCommand.args.length === 0) {
+            console.log(chalk.red("rbj-tool 需要 [options] 参数"));
+        } else {
+            console.log(chalk.red("参数错误"));
+        }
     }
 }
 

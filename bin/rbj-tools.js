@@ -10,7 +10,10 @@ program.version(versionInfo.version, "-v, --version", "rain-tools version inform
 // rbj-tool 命令解释说明
 program.description("all required rain-interface-tools configuration files are automatically generated");
 
-// 定义 rbj-tool 命令的参数
+// 定义 rbj-tool 命令的 -i 参数
+program.option("-i, --init", "Initialize the configuration files of all Rbj");
+
+// 定义 rbj-tool 命令的 -c 参数
 program.option("-c, --complement", "auto complement configuration files");
 
 // 定义 rbj-tool 命令的回调函数

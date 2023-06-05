@@ -97,7 +97,7 @@ async function copyMissingFiles(src, dest) {
                     .then(() => true)
                     .catch(() => false);
                 if (!exists) {
-                    // 如果目标目录中不存在该目录，则创建该目录
+                    // 如果目标目录中不存在该目录，则创建该目录, (注意: 因为此处对不存在的目录进行了创建, 所以在递归调用时, 此函数的开头判断目录是否存在时, 也就可以将传入的目录路径判定为, 目录是存在的状态)
                     await fsPromises.mkdir(destPath);
                     // 递归复制子目录
                     await copyMissingFiles(srcPath, destPath);
