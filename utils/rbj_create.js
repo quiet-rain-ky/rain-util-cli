@@ -43,7 +43,7 @@ function complementFun() {
 // rbj-init 命令的回调函数
 function rbjCreate(opts, programCommand) {
     if (opts.init && opts.complement) {
-        console.log(chalk.red("(-i, --init 参数) 和 (-c, --complement 参数) 不能同时使用"));
+        console.log(chalk.red("The (-i, --init parameter) and (-c, --complement parameter) cannot complement each other"));
     } else if (opts.init) {
         // 初始化创建操作
         rbjCreateFun();
@@ -51,10 +51,11 @@ function rbjCreate(opts, programCommand) {
         // 判断是否进行补全操作
         complementFun();
     } else {
-        if (programCommand.args.length === 0) {
-            console.log(chalk.red("rbj-tool 需要 [options] 参数"));
+        // programCommand.args.length == 1 && programCommand.args[0] === "rbj-tool" 的判断, 是为了防止当前项目中只有一条命令, npx 自动把 npm 包名, 当作 rbj-tool 来使用时的情况
+        if (programCommand.args.length === 0 || (programCommand.args.length == 1 && programCommand.args[0] === "rbj-tool")) {
+            console.log(chalk.red("rbj-tool requires the [options] parameter"));
         } else {
-            console.log(chalk.red("参数错误"));
+            console.log(chalk.red("parameter error"));
         }
     }
 }
