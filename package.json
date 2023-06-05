@@ -24,6 +24,9 @@
     "name": "Quiet Rain"
   },
   "license": "ISC",
+  "engines": {
+    "node": ">=v16.20.0"
+  },
   "dependencies": {
     "chalk": "^5.2.0",
     "commander": "^10.0.1"
