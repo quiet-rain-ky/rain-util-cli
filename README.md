@@ -17,7 +17,7 @@ npm install rain-util-cli -g
 <1> 初始化 rbj 配置文件
 
 ```shell
-rbj-tool
+rbj-tool -i
 ```
 
 <2> 补全 rbj 配置文件
