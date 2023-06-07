@@ -1,4 +1,4 @@
-import { UniRbjTwo, importsConfigObj } from "rain-interface-tools";
+import { Rbj, importsConfigObj } from "rain-interface-tools";
 import { FixedVal } from "./fixedValue.js";
 import globalFun from "./globalFun.js";
 
@@ -14,15 +14,9 @@ const configObj = importsConfigObj(
 );
 
 /**
- * 融合指定目录下, 所有的接口配置对象
- * Vue3 方式
- */
-// const configObj = importsConfigObj(import.meta.globEager("./subConfig/**.js"));
-
-/**
  * 初始化 rbj 对象
  */
-export default new UniRbjTwo({
+export default new Rbj({
     /**
      * 请求的主机地址, 默认值: "localhost:8080", 当需要使用 https 时, 可以直接在请求地址前面加 https://localhost:8080
      */
