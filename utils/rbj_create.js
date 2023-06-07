@@ -7,7 +7,10 @@ import { copyDirAsync, copyMissingFiles } from "../tools/fileTools.js";
 // 配置文件初始化创建函数
 function rbjCreateFun() {
     // process.cwd() 可以直接获取当前命令运行的目录
+    let targetSrc = process.cwd() + "/src";
     let targetDir = process.cwd() + "/rbjConfigs";
+    // 判断是否存在 src 目录, 如果存在, 则目标目录, 添加上 /src 路径
+    if (fs.existsSync(targetSrc)) targetDir = process.cwd() + "/src/rbjConfigs";
     if (fs.existsSync(targetDir)) {
         console.log(chalk.red("The rbjConfigs directory already exists. You can use 'rbj-tool -c' to complete the configuration file"));
     } else {
@@ -30,7 +33,10 @@ function complementFun() {
     let currentFileDirectory = path.dirname(fileURLToPath(import.meta.url));
     let sourceDir = path.join(currentFileDirectory, "../resource/rbjConfigs");
     // process.cwd() 可以直接获取当前命令运行的目录
+    let targetSrc = process.cwd() + "/src";
     let targetDir = process.cwd() + "/rbjConfigs";
+    // 判断是否存在 src 目录, 如果存在, 则目标目录, 添加上 /src 路径
+    if (fs.existsSync(targetSrc)) targetDir = process.cwd() + "/src/rbjConfigs";
     copyMissingFiles(sourceDir, targetDir)
         .then((res) => {
             console.log(chalk.green("All missing rain-interface-tools configuration files have been completed"));
