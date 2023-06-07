@@ -4,7 +4,6 @@ import globalFun from "./globalFun.js";
 
 /**
  * 融合指定目录下, 所有的接口配置对象
- * Vue3 方式
  */
 const configObj = importsConfigObj(import.meta.globEager("./subConfig/**.js"));
 
