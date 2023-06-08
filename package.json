@@ -1,6 +1,6 @@
 {
   "name": "rain-util-cli",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "辅助工具",
   "bin": {
     "rbj-tool": "bin/rbj-tools.js"
@@ -18,7 +18,8 @@
     "url": "https://gitee.com/rain-ky/rain-util-cli/issues"
   },
   "keywords": [
-    "rain-util-cli"
+    "rain-util-cli",
+    "rain-interface-tools 辅助工具"
   ],
   "author": {
     "name": "Quiet Rain"
