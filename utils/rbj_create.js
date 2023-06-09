@@ -91,11 +91,7 @@ function rbjCreate(opts, programCommand) {
         inquirer
             .prompt(questionArr)
             .then((answers) => {
-                if (answers.frameType === "react") {
-                    console.log(chalk.yellow("Note: This React function is not yet developed, so stay tuned!"));
-                } else {
-                    rbjCreateFun(answers.frameType);
-                }
+                rbjCreateFun(answers.frameType);
             })
             .catch((err) => {
                 console.error(err);
@@ -105,11 +101,7 @@ function rbjCreate(opts, programCommand) {
         inquirer
             .prompt(questionArr)
             .then((answers) => {
-                if (answers.frameType === "React") {
-                    console.log(chalk.yellow("Note: This React function is not yet developed, so stay tuned!"));
-                } else {
-                    complementFun(answers.frameType);
-                }
+                complementFun(answers.frameType);
             })
             .catch((err) => {
                 console.error(err);
