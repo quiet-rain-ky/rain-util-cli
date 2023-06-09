@@ -1,6 +1,6 @@
 {
   "name": "rain-util-cli",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "辅助工具",
   "bin": {
     "rbj-tool": "bin/rbj-tools.js"
