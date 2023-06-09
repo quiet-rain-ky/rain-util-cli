@@ -5,7 +5,12 @@ import globalFun from "./globalFun.js";
 /**
  * 融合指定目录下, 所有的接口配置对象
  */
-const configObj = importsConfigObj(import.meta.globEager("./subConfig/**.js"));
+const configObj = importsConfigObj(
+    require
+        .context("./subConfig/", true, /.js$/)
+        .keys()
+        .map((item) => require("./subConfig/" + item.substr(2, item.length)))
+);
 
 /**
  * 初始化 rbj 对象
