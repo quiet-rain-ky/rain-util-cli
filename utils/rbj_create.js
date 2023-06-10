@@ -107,7 +107,7 @@ function rbjCreate(opts, programCommand) {
             .prompt(questionArr)
             .then((answers) => {
                 if (answers.languageType == "typeScript") {
-                    console.log(chalk.red("This feature, to be developed"));
+                    console.log(chalk.red("This feature, to be developed !"));
                 } else {
                     rbjCreateFun(`${answers.languageType}/${answers.frameType}`);
                 }
@@ -121,7 +121,7 @@ function rbjCreate(opts, programCommand) {
             .prompt(questionArr)
             .then((answers) => {
                 if (answers.languageType == "typeScript") {
-                    console.log(chalk.red("This feature, to be developed"));
+                    console.log(chalk.red("This feature, to be developed !"));
                 } else {
                     complementFun(`${answers.languageType}/${answers.frameType}`);
                 }
