@@ -1,5 +1,5 @@
 /**
- * @type {import('rain-interface-tools/types/interfaceButtJoint').globalFunType}
+ * @type {import('rain-interface-tools').globalFunType}
  */
 export default {
     // 示例 (变量|函数):
