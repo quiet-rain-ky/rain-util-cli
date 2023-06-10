@@ -58,6 +58,21 @@ function rbjCreate(opts, programCommand) {
     let questionArr = [
         {
             type: "list",
+            name: "languageType",
+            message: chalk.rgb(131, 50, 251)("Is the current project using javaScript or typeScript: "),
+            choices: [
+                {
+                    name: "😏 Vue2 😏",
+                    value: "javaScript",
+                },
+                {
+                    name: "😎 Vue3 😎",
+                    value: "typeScript",
+                },
+            ],
+        },
+        {
+            type: "list",
             name: "frameType",
             message: chalk.rgb(131, 50, 251)("The framework type of the current project is: "),
             choices: [
@@ -91,7 +106,7 @@ function rbjCreate(opts, programCommand) {
         inquirer
             .prompt(questionArr)
             .then((answers) => {
-                rbjCreateFun(answers.frameType);
+                rbjCreateFun(`${answers.languageType}/${answers.frameType}`);
             })
             .catch((err) => {
                 console.error(err);
@@ -101,7 +116,7 @@ function rbjCreate(opts, programCommand) {
         inquirer
             .prompt(questionArr)
             .then((answers) => {
-                complementFun(answers.frameType);
+                complementFun(`${answers.languageType}/${answers.frameType}`);
             })
             .catch((err) => {
                 console.error(err);
