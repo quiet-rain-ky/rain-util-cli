@@ -62,11 +62,11 @@ function rbjCreate(opts, programCommand) {
             message: chalk.rgb(131, 50, 251)("Is the current project using javaScript or typeScript: "),
             choices: [
                 {
-                    name: "😏 Vue2 😏",
+                    name: "😏 javaScript 😏",
                     value: "javaScript",
                 },
                 {
-                    name: "😎 Vue3 😎",
+                    name: "😎 typeScript 😎",
                     value: "typeScript",
                 },
             ],
