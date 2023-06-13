@@ -1,11 +1,19 @@
 import { UniRbjThere, importsConfigObj } from "rain-interface-tools";
 import { FixedVal } from "./fixedValue.js";
 import globalFun from "./globalFun.js";
+// 接口配置文件导入
+import homeInterfaceConfig from "./subConfig/home.js";
+import userInterfaceConfig from "./subConfig/user.js";
+
+// 融合配置模块
+const configObj = importsConfigObj([homeInterfaceConfig, userInterfaceConfig]);
+
+// 也可以使用下方 'require.context()' 和 'import.meta.globEager()' 两种方式, 当然前提是当前项目支持使用这两种 API 接口函数
 
 /**
  * 使用 vite 独有的 api 接口, 'import.meta.globEager()' 融合指定目录下, 所有的接口配置对象
  */
-const configObj = importsConfigObj(import.meta.globEager("./subConfig/**.js"));
+// const configObj = importsConfigObj(import.meta.globEager("./subConfig/**.js"));
 
 /**
  * 使用 webpack 独有的 api 接口, 'require.context()' 融合指定目录下, 所有的接口配置对象
