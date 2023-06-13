@@ -4,7 +4,7 @@ import { program } from "commander";
 import rbjCreate from "../utils/rbj_create.js";
 
 // 输出版本信息
-program.version("1.0.8", "-v, --version", "rain-tools version information");
+program.version("1.0.9", "-v, --version", "rain-tools version information");
 
 // rbj-tool 命令解释说明
 program.description("all required rain-interface-tools configuration files are automatically generated");
