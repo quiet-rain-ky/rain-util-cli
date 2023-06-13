@@ -1,5 +1,5 @@
 /**
- * @type {import('rain-interface-tools/types/interFaceModuleConfig').default}
+ * @type {import('rain-interface-tools/types/interFaceConfig').default}
  * 这是非模块化的方式 (注意: 模块化和非模块化两种方式, 可以一起用, 没有限制)
  */
 export default {

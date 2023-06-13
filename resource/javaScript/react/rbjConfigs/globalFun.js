@@ -1,5 +1,5 @@
 /**
- * @type {import('rain-interface-tools').globalFunType}
+ * @type {import('rain-interface-tools/types/interfaceButtJoint').globalFunType}
  */
 let globalFunObj = {
     // 示例 (变量|函数):
