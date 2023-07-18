@@ -67,4 +67,10 @@ export default new UniRbjThere({
     globalResponseFilterFun(respData, rbjObj, currentUserConfigObjData, operandObj) {
         return false;
     },
+    /**
+     * 全局请求错误回调函数
+     */
+    globalRequestErrorFun(err, rbjObj) {
+        console.log(err, "请求错误");
+    },
 });

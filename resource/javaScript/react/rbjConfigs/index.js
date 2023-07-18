@@ -67,6 +67,12 @@ let core_Rbj = new Rbj({
     globalResponseFilterFun(respData, rbjObj, currentUserConfigObjData, operandObj) {
         return false;
     },
+    /**
+     * 全局请求错误回调函数
+     */
+    globalRequestErrorFun(err, rbjObj) {
+        console.log(err, "请求错误");
+    },
 });
 
 export default core_Rbj;
