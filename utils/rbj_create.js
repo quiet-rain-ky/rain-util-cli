@@ -106,11 +106,7 @@ function rbjCreate(opts, programCommand) {
         inquirer
             .prompt(questionArr)
             .then((answers) => {
-                if (answers.languageType == "typeScript") {
-                    console.log(chalk.red("This feature, to be developed !"));
-                } else {
-                    rbjCreateFun(`${answers.languageType}/${answers.frameType}`);
-                }
+                rbjCreateFun(`${answers.languageType}/${answers.frameType}`);
             })
             .catch((err) => {
                 console.error(err);
@@ -120,11 +116,7 @@ function rbjCreate(opts, programCommand) {
         inquirer
             .prompt(questionArr)
             .then((answers) => {
-                if (answers.languageType == "typeScript") {
-                    console.log(chalk.red("This feature, to be developed !"));
-                } else {
-                    complementFun(`${answers.languageType}/${answers.frameType}`);
-                }
+                complementFun(`${answers.languageType}/${answers.frameType}`);
             })
             .catch((err) => {
                 console.error(err);
