@@ -1,12 +1,12 @@
 import { Rbj, importsConfigObj } from "rain-interface-tools";
-import { FixedVal } from "./fixedValue.js";
-import globalFun from "./globalFun.js";
+import { FixedVal } from "./fixedValue.ts";
+import globalFun from "./globalFun.ts";
 // 接口配置文件导入
-import homeInterfaceConfig from "./subConfig/home.js";
-import userInterfaceConfig from "./subConfig/user.js";
+import homeInterfaceConfig from "./subConfig/home.ts";
+import userInterfaceConfig from "./subConfig/user.ts";
 
 // 融合配置模块
-const configObj = importsConfigObj([homeInterfaceConfig, userInterfaceConfig]);
+const configObj = importsConfigObj<typeof globalFun>([homeInterfaceConfig, userInterfaceConfig]);
 
 // 也可以使用下方 'require.context()' 和 'import.meta.globEager()' 两种方式, 当然前提是当前项目支持使用这两种 API 接口函数
 

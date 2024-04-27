@@ -1,8 +1,11 @@
+import globalFun from "../globalFun.ts";
+import interFaceConfig from "rain-interface-tools/types/interFaceConfig";
+
 /**
- * @type {import('rain-interface-tools/types/interFaceConfig').default}
+ * @type {import('rain-interface-tools/types/interFaceModuleConfig').default}
  * 这是非模块化的方式 (注意: 模块化和非模块化两种方式, 可以一起用, 没有限制)
  */
-export default {
+let homeInterface: interFaceConfig<typeof globalFun> = {
     // 对接对象 one, 此属性名是自定义的
     one: {
         // 可选, 默认为 ''
@@ -54,3 +57,5 @@ export default {
     },
     two: "one", // 把 one 接口定义一个 two 别名, 即支持对一个接口加一个别名, 主要是为了一个接口在不同页面使用，会造成不知道这是哪个页面的接口，所以给同一个接口定义多个别名，可以让你在进行 多模块或多页面 式的开发时，更容易分辨出不同模块或不同页面的接口
 };
+
+export default homeInterface;

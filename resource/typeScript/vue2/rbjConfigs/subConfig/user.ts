@@ -1,8 +1,11 @@
+import globalFun from "../globalFun.ts";
+import interFaceConfig from "rain-interface-tools/types/interFaceConfig";
+
 /**
  * @type {import('rain-interface-tools/types/interFaceModuleConfig').default}
  * 这是模块化的方式写法 (注意: 模块化和非模块化两种方式, 可以一起用, 没有限制)
  */
-export default {
+let userInterface: interFaceConfig<typeof globalFun> = {
     moduleName: "User 用户模块", // (可选) 仅用作控制台错误提示使用
     moduleUrl: "/user", // (可选) 默认为空, 即设置当前接口对象的模块路径, 会自动添加到请求服务器地址 reqAddress 的后面 和 每个接口 url 的前面, 仅对于当前模块对象中的 interfaceList 接口列表中的接口生效
     interfaceList: {
@@ -59,3 +62,5 @@ export default {
         two: "one", // 把 one 接口定义一个 two 别名, 即支持对一个接口加一个别名, 主要是为了一个接口在不同页面使用，会造成不知道这是哪个页面的接口，所以给同一个接口定义多个别名，可以让你在进行 多模块或多页面 式的开发时，更容易分辨出不同模块或不同页面的接口
     },
 };
+
+export default userInterface;

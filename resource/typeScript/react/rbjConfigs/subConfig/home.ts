@@ -1,8 +1,11 @@
+import globalFun from "../globalFun.ts";
+import interFaceConfig from "rain-interface-tools/types/interFaceConfig";
+
 /**
  * @type {import('rain-interface-tools/types/interFaceModuleConfig').default}
  * 这是非模块化的方式 (注意: 模块化和非模块化两种方式, 可以一起用, 没有限制)
  */
-let homeInterface = {
+let homeInterface: interFaceConfig<typeof globalFun> = {
     // 对接对象 one, 此属性名是自定义的
     one: {
         // 可选, 默认为 ''
