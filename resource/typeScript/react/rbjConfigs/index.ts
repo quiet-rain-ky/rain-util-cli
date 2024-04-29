@@ -23,7 +23,7 @@ const configObj = importsConfigObj<typeof globalFun>([homeInterfaceConfig, userI
 /**
  * 使用 vite 独有的 api 接口, 'import.meta.globEager()' 融合指定目录下, 所有的接口配置对象
  */
-// const configObj = importsConfigObj(import.meta.globEager("./subConfig/**.js"));
+// const configObj = await importsConfigObjScanAsync(import.meta.glob("./subConfig/**.js"));
 
 /**
  * 初始化 rbj 对象
